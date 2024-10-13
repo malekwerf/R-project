@@ -1,0 +1,137 @@
+product_vendor <- read.csv("ProductVendor.csv", sep = "\t", header = FALSE)
+# Par exemple, si ton fichier est sur le bureau
+file_path <- "Bureau/ProductVendor.csv"
+# Charger les données
+product_vendor <- read.csv(file_path, sep = "\t", header = FALSE)
+file_path <- "C:\Users\DeLL\Documents\ProductVendor.csv"
+base<-read.csv("C:/Users/DeLL/Documents/ProductVendor.csv")
+print(base)
+colnames(base) <- c("ProductID", "VendorID", "Quantity", "Price", "StandardCost", "OrderDate", "MinOrderQty", "MaxOrderQty", "UnitMeasure", "OrderDueDate")
+head(base)
+colnames(base) <- c("ProductID", "VendorID", "Quantity", "Price", "StandardCost", "OrderDate", "MinOrderQty", "MaxOrderQty", "UnitMeasure", "OrderDueDate")
+cat("Nombre de colonnes :", ncol(base), "\n")
+head(base)
+colnames(base) <- c("ProductID", "VendorID", "Quantity", "Price", "StandardCost", "OrderDate", "MinOrderQty", "MaxOrderQty", "UnitMeasure", "OrderDueDate")
+base<-read.csv("C:/Users/DeLL/Documents/ProductVendor (1)")
+base<-read.csv("C:/Users/DeLL/Documents/ProductVendorr")
+base<-read.csv2("C:/Users/DeLL/Documents/ProductVendorr")
+base<-read.csv2("C:/Users/DeLL/Documents/ProductVendorr.csv")
+print(base)
+head(base)
+vendor_usage <- table(base$VendorID)
+most_used_vendor <- names(sort(vendor_usage, decreasing = TRUE))[1]
+cat("Le fournisseur le plus utilisé est :", most_used_vendor)
+base$OrderDate <- as.Date(base$OrderDate, format="%Y-%m-%d")
+base$orderDate <- as.Date(base$orderDate, format="%Y-%m-%d")
+head(base$OrderDate)
+avg_price_by_vendor <- aggregate(base$Price,
+by=list(base$VendorID),
+FUN=mean)
+base$Price <- as.numeric(base$Price)
+avg_price_by_vendor <- aggregate(base$Price,
+by=list(base$VendorID),
+FUN=mean)
+colnames(avg_price_by_vendor) <- c("VendorID", "AvgPrice")
+total_quantity_by_vendor_product <- aggregate(base$Quantity,
+by=list(base$VendorID, base$ProductID),
+FUN=sum)
+length(base$VendorID)
+length(base$ProductID)
+length(base$Quantity)
+sum(is.na(base$VendorID))
+sum(is.na(base$ProductID))
+sum(is.na(base$Quantity))
+base <- base [!is.na(base $VendorID) &
+!is.na(base $ProductID) &
+!is.na(base $Quantity), ]
+savehistory("C:/Users/DeLL/Desktop/Projet R/.Rhistory")
+total_quantity_by_vendor_product <- aggregate(base$Quantity,
+by=list(base$VendorID, base$ProductID),
+FUN=sum)
+colSums(is.na(base))
+base <- base[!is.na(base$VendorID) &
+!is.na(base$ProductID) &
+!is.na(base$Quantity), ]
+dim(base)
+# Calculer la quantité totale commandée par produit et fournisseur
+total_quantity_by_vendor_product <- aggregate(base$Quantity,
+by=list(base$VendorID, base$ProductID),
+FUN=sum)
+View(base)
+total_quantity_by_vendor_product <- aggregate(base$Quantity,
+by=list(product_vendor$VendorID, product_vendor$ProductID),
+FUN=sum)
+base<-read.csv2("C:/Users/DeLL/Documents/ProductVendorr.csv")
+base<-read.csv2("C:/Users/DeLL/Documents/ProductVendorr.csv")
+avg_price_by_vendor <- aggregate(base$Price,
+by=list(base$VendorID),
+FUN=mean)
+warnings()
+base$Price <- as.numeric(base$Price)
+avg_price_by_vendor <- aggregate(base$Price,
+by=list(base$VendorID),
+FUN=mean)
+colnames(avg_price_by_vendor) <- c("VendorID", "AvgPrice")
+library(ggplot2)
+library(ggplot2)
+library(factoshiny)
+install.packages()
+library(Factoshiny)
+install.packages("ggplot2")
+install.packages("factoshiny")
+ggplot(total_quantity_by_vendor_product, aes(x = ProductID, y = TotalQuantity, fill = factor(VendorID))) +
+geom_bar(stat = "identity", position = "dodge") +
+labs(title = "Répartition des quantités commandées par produit et fournisseur",
+x = "ID Produit", y = "Quantité totale") +
+theme_minimal()
+search()
+ggplot(total_quantity_by_vendor_product, aes(x = ProductID, y = TotalQuantity, fill = factor(VendorID))) +
+geom_bar(stat = "identity", position = "dodge") +
+labs(title = "Répartition des quantités commandées par produit et fournisseur",
+x = "ID Produit", y = "Quantité totale") +
+theme_minimal()
+install.packages("ggplot2")
+library("ggplot2")
+ggplot(total_quantity_by_vendor_product, aes(x = ProductID, y = TotalQuantity, fill = factor(VendorID))) +
+geom_bar(stat = "identity", position = "dodge") +
+labs(title = "Répartition des quantités commandées par produit et fournisseur",
+x = "ID Produit", y = "Quantité totale") +
+theme_minimal()
+total_quantity_by_vendor_product <- aggregate(Quantity ~ VendorID + ProductID,
+data = product_vendor,
+FUN = sum)
+total_quantity_by_vendor_product <- aggregate(Quantity ~ VendorID + ProductID,
+data = base,
+FUN = sum)
+total_quantity_by_vendor_product <- aggregate(Quantity ~ VendorID + Product_ID,
+data = base,
+FUN = sum)
+colnames(total_quantity_by_vendor_product) <- c("VendorID", "ProductID", "TotalQuantity")
+head(total_quantity_by_vendor_product)
+library(ggplot2)
+# Créer un graphique à barres de la répartition des quantités par produit et fournisseur
+ggplot(total_quantity_by_vendor_product, aes(x = ProductID, y = TotalQuantity, fill = factor(VendorID))) +
+geom_bar(stat = "identity", position = "dodge") +
+labs(title = "Répartition des quantités commandées par produit et fournisseur",
+x = "ID Produit", y = "Quantité totale") +
+theme_minimal()
+library(shiny)
+library(factoshiny)
+library(shiny)
+library(Factoshiny)
+# Define UI
+ui <- fluidPage(
+titlePanel("Analyse des quantités par produit et fournisseur"),
+sidebarLayout(
+sidebarPanel(
+selectInput("vendor", "Choisissez un fournisseur :", choices = unique(total_quantity_by_vendor_product$VendorID))
+),
+mainPanel(
+plotOutput("barPlot"),
+factoshinyOutput("factoPlot")
+)
+)
+)
+install.packages("FactoMineR")
+library(FactoMineR)
+install.packages("Factoshiny")
